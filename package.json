@@ -1,0 +1,63 @@
+{
+  "name": "@tummycrypt/tinyland-business-pg",
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@10.13.1",
+  "license": "MIT",
+  "description": "PostgreSQL business content and booking schemas for Tinyland apps",
+  "homepage": "https://github.com/tinyland-inc/tinyland-business-pg",
+  "bugs": {
+    "url": "https://github.com/tinyland-inc/tinyland-business-pg/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinyland-inc/tinyland-business-pg.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./content-schema": {
+      "types": "./dist/content-schema.d.ts",
+      "import": "./dist/content-schema.js"
+    },
+    "./booking-schema": {
+      "types": "./dist/booking-schema.d.ts",
+      "import": "./dist/booking-schema.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "!dist/**/*.js.map"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:unit": "vitest run",
+    "test:watch": "vitest watch",
+    "check:package": "publint",
+    "prepublishOnly": "pnpm build && pnpm check:package"
+  },
+  "dependencies": {
+    "drizzle-orm": "0.39.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "publint": "^0.3.18",
+    "typescript": "5.9.3",
+    "vitest": "^4.0.18"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
