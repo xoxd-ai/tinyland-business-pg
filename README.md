@@ -1,6 +1,8 @@
 # tinyland-business-pg
 
 PostgreSQL table definitions for Tinyland business content and booking state.
+All exported tables are tenant-scoped with `tenant_id uuid NOT NULL`; consuming
+apps enforce tenant isolation through RLS and tenant-scoped queries.
 
 This package is intentionally separate from `@tummycrypt/tinyland-auth-pg`.
 Auth storage remains in the auth package. Business profile, services, hours,

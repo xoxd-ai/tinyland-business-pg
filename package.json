@@ -1,6 +1,6 @@
 {
   "name": "@tummycrypt/tinyland-business-pg",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "packageManager": "pnpm@10.13.1",
   "license": "MIT",
