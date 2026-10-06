@@ -14,3 +14,15 @@ Keep these boundaries firm:
 
 This package is a package and schema authority surface. Its Bazel build proves
 cache-backed artifact construction, not Bazel remote execution.
+
+Delivery is Bzlmod-only through `tinyland-inc/bazel-registry`. The JavaScript
+import name and package/lock metadata are Bazel build inputs, not an npmjs or
+GitHub Packages delivery lane. Do not restore publishing workflows, lifecycle
+hooks or package-token permissions.
+
+CI uses a finite schema-3 `.github/lanes.json` and the immutable shared
+`spoke-ci-v4.yml` contract. The organization owns GF admission and provider
+authority. No custom runner, local/hosted fallback or baked endpoint belongs
+here. Exact-source qualified execution and native PostgreSQL acceptance are
+separate from source publication. Agent validation never runs on Neo: no
+tests, builds, Bazel/Bazelisk, Nix, containers or dev servers.
