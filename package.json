@@ -1,20 +1,18 @@
 {
   "name": "@tummycrypt/tinyland-business-pg",
-  "version": "0.1.1",
+  "version": "1.0.0",
+  "private": true,
   "type": "module",
   "packageManager": "pnpm@10.13.1",
   "license": "MIT",
   "description": "PostgreSQL business content and booking schemas for Tinyland apps",
-  "homepage": "https://github.com/tinyland-inc/tinyland-business-pg",
+  "homepage": "https://github.com/xoxd-ai/tinyland-business-pg",
   "bugs": {
-    "url": "https://github.com/tinyland-inc/tinyland-business-pg/issues"
+    "url": "https://github.com/xoxd-ai/tinyland-business-pg/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tinyland-inc/tinyland-business-pg.git"
-  },
-  "publishConfig": {
-    "access": "public"
+    "url": "git+https://github.com/xoxd-ai/tinyland-business-pg.git"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -45,19 +43,20 @@
     "test": "vitest run",
     "test:unit": "vitest run",
     "test:watch": "vitest watch",
-    "check:package": "publint",
-    "prepublishOnly": "pnpm build && pnpm check:package"
+    "check:package": "publint"
   },
-  "dependencies": {
-    "drizzle-orm": "0.39.3"
+  "peerDependencies": {
+    "drizzle-orm": ">=0.39.3 <1.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
-    "publint": "^0.3.18",
-    "typescript": "5.9.3",
-    "vitest": "^4.0.18"
+    "@types/node": "^22.20.5",
+    "drizzle-orm": "^0.45.4",
+    "publint": "^0.3.25",
+    "typescript": "7.0.2",
+    "vite": "8.3.3",
+    "vitest": "5.0.3"
   },
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=22.12.0"
   }
 }

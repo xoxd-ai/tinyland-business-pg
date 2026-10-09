@@ -11,6 +11,9 @@ Keep these boundaries firm:
 - do not import `@tummycrypt/tinyland-auth-pg`
 - do not add site-specific deployment, runner, or infrastructure assumptions
 - keep `package.json`, `MODULE.bazel`, and `BUILD.bazel` versions in sync
+- distribute through Bazel only: release is a signed git tag, a GitHub
+  release and a `xoxd-ai/bazel-registry` entry; never `npm publish`
+- keep `drizzle-orm` a peer dependency; consumers own the Drizzle instance
 
 This package is a package and schema authority surface. Its Bazel build proves
 cache-backed artifact construction, not Bazel remote execution.

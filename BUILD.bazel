@@ -44,5 +44,5 @@ npm_package(
         "package.json",
     ],
     package = "@tummycrypt/tinyland-business-pg",
-    version = "0.1.1",
+    version = "1.0.0",
 )

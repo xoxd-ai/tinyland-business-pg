@@ -12,9 +12,17 @@ schema authority without pulling in auth storage.
 
 ## Install
 
-```bash
-pnpm add @tummycrypt/tinyland-business-pg drizzle-orm
+This package is distributed through Bazel only (RU6). It is not published to
+npmjs or GitHub Packages. Add the module from the Tinyland registry
+(`xoxd-ai/bazel-registry`):
+
+```starlark
+bazel_dep(name = "tummycrypt_tinyland_business_pg", version = "1.0.0")
 ```
+
+`drizzle-orm` is a peer dependency (`>=0.39.3 <1.0.0`): the consuming app
+provides its own `drizzle-orm`, so the tables and the app's queries share one
+Drizzle instance.
 
 ## Exports
 
@@ -66,6 +74,9 @@ Booking tables:
 - `slot_reservations`
 
 ## Validation
+
+Toolchain: TypeScript 7.0.2, Vite 8.3.3 and Vitest 5.0.3 (exact pins), pnpm
+10.13.1, Node 22.
 
 ```bash
 pnpm install --frozen-lockfile
