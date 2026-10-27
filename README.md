@@ -84,6 +84,10 @@ pnpm typecheck
 pnpm test:unit
 pnpm build
 pnpm check:package
-bazel build //:pkg
-bazel test //:test
+bazel build //:pkg      # local, non-qualifying
+bazel test //:test      # local, non-qualifying
 ```
+
+CI (`.github/workflows/ci.yml`, `bazel_targets: "//:pkg //:test"`) is the
+qualifying gate. A local Bazel run is a non-qualifying check, and `.bazelrc`
+sets `startup --max_idle_secs=120`, so its server exits after 120 s idle.
